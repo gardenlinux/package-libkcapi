@@ -1,0 +1,15 @@
+:100644 100644 f81339f 9b3653c M	debian/changelog
+
+diff --git a/debian/changelog b/debian/changelog
+index f81339f..9b3653c 100644
+--- a/debian/changelog
++++ b/debian/changelog
+@@ -1 +1,8 @@
++libkcapi (1.5.0) unstable; urgency=medium
++
++  * New upstream version 1.5.0
++  * d/symbols: Add new symbols
++
++ -- Jan Preißler <jan.preissler@sap.com>  Wed, 14 Jan 2025 14:15:22 +0100
++
+ libkcapi (1.4.0-1) unstable; urgency=medium
