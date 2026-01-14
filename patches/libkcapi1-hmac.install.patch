@@ -1,0 +1,10 @@
+:000000 100644 0000000 52cb630 A	debian/libkcapi1-hmac.install
+
+diff --git a/debian/libkcapi1-hmac.install b/debian/libkcapi1-hmac.install
+new file mode 100644
+index 0000000..52cb630
+--- /dev/null
++++ b/debian/libkcapi1-hmac.install
+@@ -0,0 +1,2 @@
++usr/lib/*/.libkcapi.so.*.hmac
++usr/lib/*-linux-gnu/.libkcapi.so.hmac

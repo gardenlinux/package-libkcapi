@@ -1,0 +1,12 @@
+:000000 100644 0000000 cce1078 A	debian/fipshmac.install
+
+diff --git a/debian/fipshmac.install b/debian/fipshmac.install
+new file mode 100644
+index 0000000..cce1078
+--- /dev/null
++++ b/debian/fipshmac.install
+@@ -0,0 +1,4 @@
++usr/bin/fipshmac
++usr/bin/fipscheck
++usr/bin/.fipscheck.hmac
++usr/bin/.fipshmac.hmac

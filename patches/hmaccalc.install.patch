@@ -1,0 +1,34 @@
+:000000 100644 0000000 3c38af7 A	debian/hmaccalc.install
+
+diff --git a/debian/hmaccalc.install b/debian/hmaccalc.install
+new file mode 100644
+index 0000000..3c38af7
+--- /dev/null
++++ b/debian/hmaccalc.install
+@@ -0,0 +1,26 @@
++usr/bin/.md5sum.hmac 
++usr/bin/.sha1hmac.hmac
++usr/bin/.sha1sum.hmac
++usr/bin/.sha224hmac.hmac
++usr/bin/.sha224sum.hmac
++usr/bin/.sha256hmac.hmac
++usr/bin/.sha256sum.hmac
++usr/bin/.sha384hmac.hmac
++usr/bin/.sha384sum.hmac
++usr/bin/.sha512hmac.hmac
++usr/bin/.sha512sum.hmac
++usr/bin/.sm3hmac.hmac
++usr/bin/.sm3sum.hmac
++usr/bin/md5sum
++usr/bin/sha1hmac
++usr/bin/sha1sum
++usr/bin/sha224hmac
++usr/bin/sha224sum
++usr/bin/sha256hmac
++usr/bin/sha256sum
++usr/bin/sha384hmac
++usr/bin/sha384sum
++usr/bin/sha512hmac
++usr/bin/sha512sum
++usr/bin/sm3hmac
++usr/bin/sm3sum
