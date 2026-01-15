@@ -1,2 +1,8 @@
-libkcapi1.symbols.patch
 changelog.patch
+control.patch
+enable.hasher.patch
+fipshmac.install.patch
+hmaccalc.install.patch
+kcapi-tools.install.patch
+libkcapi1-hmac.install.patch
+libkcapi1.symbols.patch

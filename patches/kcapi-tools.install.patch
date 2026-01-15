@@ -1,0 +1,9 @@
+:100644 100644 88da7f2 60fed2c M	debian/kcapi-tools.install
+
+diff --git a/debian/kcapi-tools.install b/debian/kcapi-tools.install
+index 88da7f2..60fed2c 100644
+--- a/debian/kcapi-tools.install
++++ b/debian/kcapi-tools.install
+@@ -1 +1,2 @@
+ usr/bin/kcapi-*
++usr/bin/.kcapi-hasher.hmac

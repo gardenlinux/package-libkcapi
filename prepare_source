@@ -1,6 +1,8 @@
 apt_src --ignore-orig libkcapi
 git_src https://github.com/smuellerDD/libkcapi.git
 apply_patches
-version_suffix=gl0
-
-version=1.5.0
+# The version we add to the changelog will be incompeted if it's without the -1
+version_suffix=-1gl0
+version_orig="1.5.0"
+version="${version_orig}-0"
+#version=1.5.0

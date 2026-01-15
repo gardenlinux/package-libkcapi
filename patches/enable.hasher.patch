@@ -1,7 +1,7 @@
-:100755 100755 87e0e16 0000000 M	debian/rules
+:100755 100755 87e0e16 b8c86bb M	debian/rules
 
 diff --git a/debian/rules b/debian/rules
-index 87e0e16..f9033d8 100755
+index 87e0e16..b8c86bb 100755
 --- a/debian/rules
 +++ b/debian/rules
 @@ -23,3 +23,4 @@ kcapi_tools = \
@@ -10,3 +10,15 @@ index 87e0e16..f9033d8 100755
 + --enable-kcapi-dgstapp \
 + --enable-kcapi-hasher
  
+@@ -52,2 +53,11 @@ override_dh_install-arch:
+ 
++execute_after_dh_strip:
++	# generate the hmac of the striped lib
++	./bin/kcapi-hasher -n sha512hmac ./debian/libkcapi1/usr/lib/aarch64-linux-gnu/libkcapi.so.1.5.0 > ./debian/libkcapi1-hmac/usr/lib/aarch64-linux-gnu/.libkcapi.so.1.5.0.hmac
++	sed -i 's/.\/debian\/libkcapi1//' ./debian/libkcapi1-hmac/usr/lib/aarch64-linux-gnu/.libkcapi.so.1.5.0.hmac
++	./bin/kcapi-hasher -n sha512hmac ./debian/libkcapi1/usr/lib/aarch64-linux-gnu/libkcapi.so.1 > ./debian/libkcapi1-hmac/usr/lib/aarch64-linux-gnu/.libkcapi.so.1.hmac
++	sed -i 's/.\/debian\/libkcapi1//' ./debian/libkcapi1-hmac/usr/lib/aarch64-linux-gnu/.libkcapi.so.1.hmac
++
++
++
+ override_dh_auto_test-arch:
