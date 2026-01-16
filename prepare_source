@@ -4,5 +4,5 @@ apply_patches
 # The version we add to the changelog will be incompeted if it's without the -1
 version_suffix=-1gl0
 version_orig="1.5.0"
-version="${version_orig}-0"
+version="${version_orig}-1"
 #version=1.5.0
