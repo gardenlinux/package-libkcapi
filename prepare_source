@@ -6,3 +6,4 @@ version_suffix=-1gl0
 version_orig="1.5.0"
 version="${version_orig}-2"
 #version=1.5.0
+version_suffix=gl0
