@@ -9,19 +9,19 @@ index 479e008..fd5c33d 100644
 +Architecture: linux-any
 +Section: utils
 +Multi-Arch: foreign
-+Depends: ${misc:Depends}, ${shlibs:Depends}
++Depends: kcapi-tools ${misc:Depends}, ${shlibs:Depends}
 +Description: Command-line tools for computing HMAC for FIPS-140-3
 +
 +Package: hmaccalc
 +Architecture: linux-any
 +Section: utils
 +Multi-Arch: foreign
-+Depends: ${misc:Depends}, ${shlibs:Depends}
++Depends: kcapi-tools ${misc:Depends}, ${shlibs:Depends}
 +Description: The hmaccalc package provides tools that compute and verify hash-based message authentication code (HMAC) values for the contents of files.
 +
 +Package: libkcapi1-hmac
 +Architecture: linux-any
 +Multi-Arch: same
 +Pre-Depends: ${misc:Pre-Depends}
-+Depends: ${misc:Depends}, ${shlibs:Depends}
++Depends: libkcapi1 ${misc:Depends}, ${shlibs:Depends}
 +Description: HMAc file

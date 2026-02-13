@@ -5,9 +5,7 @@ new file mode 100644
 index 0000000..253b6f6
 --- /dev/null
 +++ b/debian/hmaccalc.install
-@@ -0,0 +1,17 @@
-+usr/libexec/libkcapi/fipscheck
-+usr/libexec/libkcapi/fipshmac
+@@ -0,0 +1,15 @@
 +usr/libexec/libkcapi/md5sum
 +usr/libexec/libkcapi/sha1sum
 +usr/libexec/libkcapi/sha3sum
