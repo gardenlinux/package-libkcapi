@@ -1,7 +1,7 @@
-:100755 100755 87e0e16 63648ef M	debian/rules
+:100755 100755 87e0e16 c0a76c4 M	debian/rules
 
 diff --git a/debian/rules b/debian/rules
-index 87e0e16..63648ef 100755
+index 87e0e16..c0a76c4 100755
 --- a/debian/rules
 +++ b/debian/rules
 @@ -23,3 +23,4 @@ kcapi_tools = \
@@ -10,7 +10,34 @@ index 87e0e16..63648ef 100755
 + --enable-kcapi-dgstapp \
 + --enable-kcapi-hasher
  
-@@ -52,2 +53,13 @@ override_dh_install-arch:
+@@ -48,2 +49,26 @@ override_dh_auto_install-arch:
+ 
++
++execute_before_dh_install:
++	#sleep 300
++	# https://github.com/gardenlinux/gardenlinux/issues/4193
++	# Coreutils md5sum or sha*sum tools do not check for the FIPS state.
++	# The tools provide by libkcapi do so, hence will place thoses files here instead.
++	#mkdir ./debian/hmaccalc/usr/bin
++	mv ./debian/tmp/usr/libexec/libkcapi/md5sum ./debian/tmp/usr/bin/md5sum
++	mv ./debian/tmp/usr/libexec/libkcapi/sha1sum ./debian/tmp/usr/bin/sha1sum
++	mv ./debian/tmp/usr/libexec/libkcapi/sha3sum ./debian/tmp/usr/bin/sha3sum
++	mv ./debian/tmp/usr/libexec/libkcapi/sha224sum ./debian/tmp/usr/bin/sha224sum
++	mv ./debian/tmp/usr/libexec/libkcapi/sha256sum ./debian/tmp/usr/bin/sha256sum
++	mv ./debian/tmp/usr/libexec/libkcapi/sha384sum ./debian/tmp/usr/bin/sha384sum
++	mv ./debian/tmp/usr/libexec/libkcapi/sha512sum ./debian/tmp/usr/bin/sha512sum
++	mv ./debian/tmp/usr/libexec/libkcapi/sha512hmac ./debian/tmp/usr/bin/sha512hmac
++	#mv ./debian/hmaccalc/usr/libexec/libkcapi/md5sum ./debian/hmaccalc/usr/bin/md5sum
++	#mv ./debian/hmaccalc/usr/libexec/libkcapi/sha1sum ./debian/hmaccalc/usr/bin/sha1sum
++	#mv ./debian/hmaccalc/usr/libexec/libkcapi/sha224sum ./debian/hmaccalc/usr/bin/sha224sum
++	#mv ./debian/hmaccalc/usr/libexec/libkcapi/sha256sum ./debian/hmaccalc/usr/bin/sha256sum
++	#mv ./debian/hmaccalc/usr/libexec/libkcapi/sha384sum ./debian/hmaccalc/usr/bin/sha384sum
++	#mv ./debian/hmaccalc/usr/libexec/libkcapi/sha512sum ./debian/hmaccalc/usr/bin/sha512sum
++	#mv ./debian/hmaccalc/usr/libexec/libkcapi/sha512hmac ./debian/hmaccalc/usr/bin/sha512hmac
++
++
+ override_dh_install-arch:
+@@ -52,2 +77,15 @@ override_dh_install-arch:
  
 +execute_after_dh_strip:
 +	# generate the hmac of the striped lib
@@ -20,6 +47,8 @@ index 87e0e16..63648ef 100755
 +	sed -i 's/.\/debian\/libkcapi1//' ./debian/libkcapi1-hmac/usr/lib/$(shell uname -m)-linux-gnu/.libkcapi.so.1.hmac
 +	./bin/kcapi-hasher -n sha512hmac ./debian/kcapi-tools/usr/bin/kcapi-hasher > ./debian/kcapi-tools/usr/bin/.kcapi-hasher.hmac
 +	sed -u 's/.\/debian\/kcapi-tools\/usr\/bin\//*/' ./debian/kcapi-tools/usr/bin/.kcapi-hasher.hmac
++
++
 +
 +
 +

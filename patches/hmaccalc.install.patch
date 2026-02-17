@@ -5,19 +5,18 @@ new file mode 100644
 index 0000000..253b6f6
 --- /dev/null
 +++ b/debian/hmaccalc.install
-@@ -0,0 +1,15 @@
-+usr/libexec/libkcapi/md5sum
-+usr/libexec/libkcapi/sha1sum
-+usr/libexec/libkcapi/sha3sum
-+usr/libexec/libkcapi/sha256sum
+@@ -0,0 +1,14 @@
++usr/bin/md5sum
++usr/bin/sha1sum
++usr/bin/sha3sum
++usr/bin/sha224sum
++usr/bin/sha256sum
++usr/bin/sha384sum
++usr/bin/sha512sum
 +usr/libexec/libkcapi/sha1hmac
 +usr/libexec/libkcapi/sha224hmac
-+usr/libexec/libkcapi/sha224sum
 +usr/libexec/libkcapi/sha256hmac
-+usr/libexec/libkcapi/sha256sum
 +usr/libexec/libkcapi/sha384hmac
-+usr/libexec/libkcapi/sha384sum
-+usr/libexec/libkcapi/sha512hmac
-+usr/libexec/libkcapi/sha512sum
++usr/bin/sha512hmac
 +usr/libexec/libkcapi/sm3hmac
 +usr/libexec/libkcapi/sm3sum
