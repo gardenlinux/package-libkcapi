@@ -2,7 +2,7 @@ diff --git a/debian/control b/debian/control
 index 479e008..fd5c33d 100644
 --- a/debian/control
 +++ b/debian/control
-@@ -89 +89,22 @@ Description: Documentation for Linux Kernel Crypto API
+@@ -89 +89,23 @@ Description: Documentation for Linux Kernel Crypto API
   This is the documentation for libkcapi
 +
 +Package: fipshmac
@@ -15,6 +15,7 @@ index 479e008..fd5c33d 100644
 +Package: hmaccalc
 +Architecture: linux-any
 +Section: utils
++Essential: yes
 +Multi-Arch: foreign
 +Depends: kcapi-tools ${misc:Depends}, ${shlibs:Depends}
 +Description: The hmaccalc package provides tools that compute and verify hash-based message authentication code (HMAC) values for the contents of files.
