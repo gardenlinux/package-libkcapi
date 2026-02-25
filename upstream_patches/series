@@ -1,1 +1,2 @@
 0001-fallback-to-send-sendmsg-syscalls-if-vmsplice-return.patch
+0002-hasher-make-c-a-flag-and-support-multiple-checkfiles.patch
