@@ -1,0 +1,11 @@
+:100644 100644 217f59d 0000000 M	apps/kcapi-hasher.c
+
+diff --git a/apps/kcapi-hasher.c b/apps/kcapi-hasher.c
+index 217f59d..c7b0a50 100644
+--- a/apps/kcapi-hasher.c
++++ b/apps/kcapi-hasher.c
+@@ -526,3 +526,3 @@ static int hash_files(const struct hash_params *params,
+ 				free(outfile);
+-			} else if (strcmp(filename, "-") == 0) {
++			} else {
+ 				filename = NULL;
