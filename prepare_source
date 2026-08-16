@@ -1,9 +1,7 @@
 apt_src --ignore-orig libkcapi
-git_src -b v1.5.0 https://github.com/smuellerDD/libkcapi.git
+git_src -b v1.5.1 https://github.com/smuellerDD/libkcapi.git
 apply_patches
-import_upstream_patches
 # The version we add to the changelog will be incompeted if it's without the -1
 version_suffix=gl4
-version_orig="1.5.0"
+version_orig="1.5.1"
 version="${version_orig}-2"
-#version=1.5.0
