@@ -35,8 +35,8 @@ index 87e0e16..7b8f258 100755
  
 +execute_after_dh_strip:
 +	# generate the hmac of the striped lib
-+	./bin/kcapi-hasher -n sha512hmac ./debian/libkcapi1/usr/lib/$(shell uname -m)-linux-gnu/libkcapi.so.1.5.0 > ./debian/libkcapi1-hmac/usr/lib/$(shell uname -m)-linux-gnu/.libkcapi.so.1.5.0.hmac
-+	sed -i 's/.\/debian\/libkcapi1//' ./debian/libkcapi1-hmac/usr/lib/$(shell uname -m)-linux-gnu/.libkcapi.so.1.5.0.hmac
++	./bin/kcapi-hasher -n sha512hmac ./debian/libkcapi1/usr/lib/$(shell uname -m)-linux-gnu/libkcapi.so.1.5.1 > ./debian/libkcapi1-hmac/usr/lib/$(shell uname -m)-linux-gnu/.libkcapi.so.1.5.1.hmac
++	sed -i 's/.\/debian\/libkcapi1//' ./debian/libkcapi1-hmac/usr/lib/$(shell uname -m)-linux-gnu/.libkcapi.so.1.5.1.hmac
 +	./bin/kcapi-hasher -n sha512hmac ./debian/libkcapi1/usr/lib/$(shell uname -m)-linux-gnu/libkcapi.so.1 > ./debian/libkcapi1-hmac/usr/lib/$(shell uname -m)-linux-gnu/.libkcapi.so.1.hmac
 +	sed -i 's/.\/debian\/libkcapi1//' ./debian/libkcapi1-hmac/usr/lib/$(shell uname -m)-linux-gnu/.libkcapi.so.1.hmac
 +	./bin/kcapi-hasher -n sha512hmac ./debian/kcapi-tools/usr/bin/kcapi-hasher > ./debian/kcapi-tools/usr/bin/.kcapi-hasher.hmac
