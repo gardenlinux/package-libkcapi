@@ -1,17 +1,21 @@
-:100755 100755 87e0e16 7b8f258 M	debian/rules
-
 diff --git a/debian/rules b/debian/rules
-index 87e0e16..7b8f258 100755
+index a1ea103..969628c 100755
 --- a/debian/rules
 +++ b/debian/rules
-@@ -23,3 +23,4 @@ kcapi_tools = \
-  --enable-kcapi-encapp \
-- --enable-kcapi-dgstapp
-+ --enable-kcapi-dgstapp \
-+ --enable-kcapi-hasher
+@@ -14,7 +14,8 @@ override_dh_auto_configure:
+ 	dh_auto_configure -- \
+ 		--enable-kcapi-dgstapp \
+ 		--enable-kcapi-encapp \
+-		--enable-kcapi-rngapp
++		--enable-kcapi-rngapp \
++		--enable-kcapi-hasher
  
-@@ -48,2 +49,20 @@ override_dh_auto_install-arch:
- 
+ override_dh_auto_build:
+ 	dh_auto_build
+@@ -37,3 +38,28 @@ override_dh_auto_install:
+ execute_after_dh_auto_install:
+ 	# remove unused files
+ 	rm -f debian/tmp/usr/lib/*/*.la
 +
 +execute_before_dh_install:
 +	#sleep 300
@@ -29,10 +33,6 @@ index 87e0e16..7b8f258 100755
 +	mv ./debian/tmp/usr/libexec/libkcapi/sha512sum ./debian/tmp/usr/bin/sha512sum
 +	mv ./debian/tmp/usr/libexec/libkcapi/sha512hmac ./debian/tmp/usr/bin/sha512hmac
 +
-+
- override_dh_install-arch:
-@@ -52,2 +71,15 @@ override_dh_install-arch:
- 
 +execute_after_dh_strip:
 +	# generate the hmac of the striped lib
 +	./bin/kcapi-hasher -n sha512hmac ./debian/libkcapi1/usr/lib/$(shell uname -m)-linux-gnu/libkcapi.so.1.5.1 > ./debian/libkcapi1-hmac/usr/lib/$(shell uname -m)-linux-gnu/.libkcapi.so.1.5.1.hmac
@@ -41,9 +41,3 @@ index 87e0e16..7b8f258 100755
 +	sed -i 's/.\/debian\/libkcapi1//' ./debian/libkcapi1-hmac/usr/lib/$(shell uname -m)-linux-gnu/.libkcapi.so.1.hmac
 +	./bin/kcapi-hasher -n sha512hmac ./debian/kcapi-tools/usr/bin/kcapi-hasher > ./debian/kcapi-tools/usr/bin/.kcapi-hasher.hmac
 +	sed -u 's/.\/debian\/kcapi-tools\/usr\/bin\//*/' ./debian/kcapi-tools/usr/bin/.kcapi-hasher.hmac
-+
-+
-+
-+
-+
- override_dh_auto_test-arch:
