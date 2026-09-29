@@ -1,5 +1,0 @@
-# We something that looks like this: libkcapi_1.4.0.orig.tar.xz
-cd $dir
-tar -cJvf libkcapi_${version}.orig.tar.xz src
-cd /opt/package_build/workdir
-#sleep 3000

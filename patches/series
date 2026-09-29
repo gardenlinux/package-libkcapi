@@ -1,4 +1,3 @@
-changelog.patch
 control.patch
 fipshmac.install.patch
 hmaccalc.install.patch
