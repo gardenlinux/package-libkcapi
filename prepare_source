@@ -6,3 +6,4 @@ git_src -b "debian/$version" "https://forgejo.debian.net/linux/libkcapi"
 apply_patches
 
 
+version_suffix=gl0
